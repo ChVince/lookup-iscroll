@@ -52,6 +52,8 @@
 		wheelDeltaX *= this.options.invertWheelDirection;
 		wheelDeltaY *= this.options.invertWheelDirection;
 
+		var origWheelDeltaY = wheelDeltaY;
+
 		if ( !this.hasVerticalScroll ) {
 			wheelDeltaX = wheelDeltaY;
 			wheelDeltaY = 0;
@@ -93,7 +95,14 @@
 			newY = this.maxScrollY;
 		}
 
-		this.scrollTo(newX, newY, 0);
+		if (origWheelDeltaY < 0 && this.x === newX && this.y === newY && this.y === this.maxScrollY) {
+			this._execEvent('bottomYReached');
+		} else if (origWheelDeltaY > 0 && this.x === newX && this.y === newY && this.y === 0) {
+			this._execEvent('topYReached');
+		} else {
+			this.scrollTo(newX, newY, 0);
+		}
+
 
 // INSERT POINT: _wheel
 	},
