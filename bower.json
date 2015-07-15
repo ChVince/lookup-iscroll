@@ -14,13 +14,11 @@
     "desktop"
   ],
   "main": "build/iscroll.js",
-  "devDependencies": {
-    "jshint": "~2.5.1",
-    "uglify-js": "~2.4.13"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/pmstss/lookup-iscroll.git"
-  },
-  "license": "MIT"
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "demos",
+    "src"
+  ]
 }
