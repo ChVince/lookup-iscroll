@@ -761,8 +761,10 @@ IScroll.prototype = {
 		this.isInTransition = this.options.useTransition && time > 0;
 
 		if ( !time || (this.options.useTransition && easing.style) ) {
-			this._transitionTimingFunction(easing.style);
-			this._transitionTime(time);
+			if (time) {
+				this._transitionTimingFunction(easing.style);
+				this._transitionTime(time);
+			}
 			this._translate(x, y);
 		} else {
 			this._animate(x, y, time, easing.fn);
