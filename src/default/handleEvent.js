@@ -34,8 +34,6 @@
 				this._transitionEnd(e);
 				break;
 			case 'wheel':
-			case 'DOMMouseScroll':
-			case 'mousewheel':
 				this._wheel(e);
 				break;
 			case 'keydown':

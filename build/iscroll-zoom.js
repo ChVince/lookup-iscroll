@@ -1,4 +1,4 @@
-/*! iScroll v5.1.3 ~ (c) 2008-2014 Matteo Spinelli ~ http://cubiq.org/license */
+/*! iScroll v5.1.3 ~ (c) 2008-2015 Matteo Spinelli ~ http://cubiq.org/license */
 (function (window, document, Math) {
 var rAF = window.requestAnimationFrame	||
 	window.webkitRequestAnimationFrame	||
@@ -1193,13 +1193,9 @@ IScroll.prototype = {
 
 	_initWheel: function () {
 		utils.addEvent(this.wrapper, 'wheel', this);
-		utils.addEvent(this.wrapper, 'mousewheel', this);
-		utils.addEvent(this.wrapper, 'DOMMouseScroll', this);
 
 		this.on('destroy', function () {
 			utils.removeEvent(this.wrapper, 'wheel', this);
-			utils.removeEvent(this.wrapper, 'mousewheel', this);
-			utils.removeEvent(this.wrapper, 'DOMMouseScroll', this);
 		});
 	},
 
@@ -1748,8 +1744,6 @@ IScroll.prototype = {
 				this._transitionEnd(e);
 				break;
 			case 'wheel':
-			case 'DOMMouseScroll':
-			case 'mousewheel':
 				if ( this.options.wheelAction == 'zoom' ) {
 					this._wheelZoom(e);
 					return;	
