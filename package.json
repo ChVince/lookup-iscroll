@@ -1,8 +1,8 @@
 {
   "name": "lookup-iscroll",
   "description": "Smooth scrolling for the web",
-  "version": "5.2.1",
-  "homepage": "https://github.com/pmstss/lookup-iscroll",
+  "version": "5.2.2",
+  "homepage": "https://github.com/ChVince/lookup-iscroll",
   "author": "Matteo Spinelli <matteo@cubiq.org> (http://cubiq.org)",
   "keywords": [
     "scrolling",
@@ -20,7 +20,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/pmstss/lookup-iscroll.git"
+    "url": "git://github.com/ChVince/lookup-iscroll.git"
   },
   "license": "MIT"
 }
